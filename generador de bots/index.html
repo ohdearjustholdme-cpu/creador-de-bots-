@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Bots!! ^^</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="p-6">
+
+  <h1 class="text-4xl font-bold title-gradient mb-6 text-center text-pink-600">
+    Generador de bots ₍ᐢ. .ᐢ₎
+  </h1>
+
+  <p class="text-center text-pink-600 mb-10"> 
+    Rellena los campos y avísame si tienes algún problema, ¿sí? ^^
+  </p>
+
+  <!-- GRID CORRECTO -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- CONFIGURACIÓN -->
+    <div class="card p-5">
+      <h2 class="text-xl font-semibold text-pink-500 mb-5">
+        ♡⸝⸝ Configuración del Bot ──── ୨୧
+      </h2>
+
+      <label class="text-pink-600">Nombre del Bot</label>
+      <input id="botName" class="w-full p-2 rounded-md border mb-3" placeholder="DoggyBot" />
+
+      <label class="text-pink-600">Tipo de actividad</label>
+      <select id="activityType" class="w-full p-2 rounded-md border mb-3">
+        <option>Playing</option>
+        <option>Listening</option>
+        <option>Watching</option>
+        <option>Streaming</option>
+        <option>Competing</option>
+      </select>
+
+      <label class="text-pink-600">Texto de actividad</label>
+      <input id="activityText" class="w-full p-2 rounded-md border mb-3" placeholder="🦴 | !help ><" />
+
+      <label class="text-pink-600">Estado</label>
+      <select id="status" class="w-full p-2 rounded-md border mb-3">
+        <option>online</option>
+        <option>dnd</option>
+        <option>idle</option>
+      </select>
+
+      <label class="text-pink-600">Color del Embed (RGB)</label>
+      <input id="colorEmbed" class="w-full p-2 rounded-md border mb-3" placeholder="145, 101, 81" />
+    </div>
+
+    <!-- COMANDOS -->
+    <div class="card p-5 md:col-span-2">
+      <h2 class="text-xl font-semibold text-pink-500 mb-3 flex justify-between">
+        Crear comandos!!
+        <button onclick="addCommand()" class="bg-pink-400 text-white px-3 py-1 rounded-lg shadow hover:scale-105 transition">
+          + Agregar
+        </button>
+      </h2>
+
+      <div id="commandsContainer"></div>
+    </div>
+
+  </div>
+
+  <!-- BOTONES -->
+  <div class="flex justify-center gap-4 mt-10">
+    <button onclick="generatePreview()" class="bg-white text-pink-600 font-semibold px-4 py-2 rounded-lg shadow">
+      ᯓ★ Vista Previa
+    </button>
+  </div>
+
+  <!-- PREVIEW -->
+  <div id="preview" class="card p-5 mt-8 hidden">
+    <h2 class="text-xl font-semibold text-pink-500 mb-3">Vista previa!</h2>
+    <pre id="previewCode" class="whitespace-pre-wrap text-sm"></pre>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
